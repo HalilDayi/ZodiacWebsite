@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="ZodiacCss.css" />
 </head>
 <body>
-    <table>
+    <table id="ZodiacTable">
         <?php
         $zodiacs = array("CAPRICORN","AQUARIUS","PISCES","ARIES","TAURUS","GEMINI","CANCER","LEO","VIRGO","LIBRA"
         ,"SCORPIO","SAGITTARIUS");
@@ -17,24 +17,32 @@
             if($i % 3 == 0){
                 ?>
                     <tr>
-                        <td id= <?=$zodiacs[$i] ?> onclick="changeBackGround(this)" ><a href="http://localhost/Zodiac/info.php"> <?= $zodiacs[$i] ?></a></td>
+                        <form action="http://localhost/Zodiac/info.php" method="get">
+                            <td id= <?=$zodiacs[$i] ?> onclick="changeBackGround(this)" >
+                            <input type="submit" value=<?= $zodiacs[$i]?> name="btn" class="colorify"></td>
+                        </form>
                 <?php
             }
             else if($i % 3 == 1){
                 ?>
-                        <td id= <?= $zodiacs[$i] ?> onclick="changeBackGround(this)"><a href="http://localhost/Zodiac/info.php"> <?= $zodiacs[$i] ?></a></td>
+                        <form action="http://localhost/Zodiac/info.php" method="get">
+                             <td id= <?= $zodiacs[$i] ?> onclick="changeBackGround(this)"> 
+                             <input type="submit" value=<?= $zodiacs[$i]?> name="btn" class="colorify"></td>
+                        </form>
                 <?php           
             }
             else{
                 ?>
-                        <td id= <?= $zodiacs[$i] ?> onclick="changeBackGround(this)"><a href="http://localhost/Zodiac/info.php"> <?= $zodiacs[$i] ?></a></td>
-                        </tr>
+                        <form action="http://localhost/Zodiac/info.php" method="get">
+                            <td id= <?= $zodiacs[$i] ?> onclick="changeBackGround(this)"> 
+                            <input type="submit" value=<?= $zodiacs[$i]?> name="btn" class="colorify"></td>                      
+                        </form>
+                    </tr>
                 <?php
             }
         }
         ?>
     </table>
-        
         <script src="Script1.js"></script>
 </body>
 </html>
